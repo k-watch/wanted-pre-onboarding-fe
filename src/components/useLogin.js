@@ -8,6 +8,7 @@ const registerInfo = [
 
 function useLogin() {
   const emailInputRef = useRef();
+
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -16,6 +17,7 @@ function useLogin() {
     email: false,
     password: false,
   });
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -52,14 +54,14 @@ function useLogin() {
 
       for (const info of registerInfo) {
         // 입력 정보와 등록된 회원정보와 같다면
-        // 로컬스토리지 저장 후 페이지 이동
+        // 로컬스토리지 저장 후 메인 페이지 이동
         if (info.email === form.email && info.password === form.password) {
           try {
             localStorage.setItem('user', JSON.stringify(info));
           } catch (e) {
             console.log('localStorage is not working');
           }
-          navigate('/info');
+          navigate('/');
           break;
         }
       }
