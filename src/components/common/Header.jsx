@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IoMdHeartEmpty, IoLogoInstagram } from 'react-icons/io';
 import { MdLogout } from 'react-icons/md';
 import useHeader from './useHeader';
-import useResponsive from '../common/useResponsive';
+import useResponsive from '../../modules/hook/useResponsive';
 
-const Wrap = styled.div`
+const Wrap = styled.ul`
   position: sticky;
   top: 0;
   display: flex;
@@ -14,11 +15,28 @@ const Wrap = styled.div`
   padding: 10px calc(15% - 100px);
   background-color: white;
 
-  button {
-    height: 30px;
-    background-color: white;
-    color: black;
-    font-size: 1.4375rem;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  > * {
+    &:last-of-type {
+      font-size: 1.4375rem;
+
+      svg {
+        margin-left: 6px;
+      }
+
+      button {
+        height: 30px;
+        margin-left: 0;
+        padding: 0;
+        background-color: white;
+        font-size: 1.4375rem;
+        color: black;
+      }
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -45,11 +63,17 @@ function Header() {
 
   return (
     <Wrap>
-      <img src="/logo.png" alt="logo" />
-      {!mobile && <InputStyle placeholder="검색" />}
-      <button onClick={onClick}>
-        <MdLogout />
-      </button>
+      <li>
+        <img src="/logo.png" alt="logo" />
+      </li>
+      <li>{!mobile && <InputStyle placeholder="검색" />}</li>
+      <li>
+        <IoMdHeartEmpty />
+        <IoLogoInstagram />
+        <button onClick={onClick}>
+          <MdLogout />
+        </button>
+      </li>
     </Wrap>
   );
 }

@@ -1,9 +1,10 @@
 {
   "feeds": [
     {
-      "id": "1",
+      "id": 1,
       "name": "원티드",
-      "img": "https://source.unsplash.com/random/500x500",
+      "src": "https://source.unsplash.com/random/500x500",
+      "like": 10,
       "comments": [
         {
           "name": "투티드",
@@ -16,9 +17,10 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "투티드",
-      "img": "https://source.unsplash.com/random/500x900",
+      "src": "https://source.unsplash.com/random/500x900",
+      "like": 5,
       "comments": [
         {
           "name": "원티드",
@@ -31,9 +33,10 @@
       ]
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "쓰리티드",
-      "img": "https://source.unsplash.com/random/900x500",
+      "src": "https://source.unsplash.com/random/900x500",
+      "like": 20,
       "comments": [
         {
           "name": "투티드",

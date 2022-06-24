@@ -38,9 +38,9 @@ const ButtonStyle = styled.button`
   padding: 5px 9px;
   border-radius: 4px;
   background-color: ${(props) => (props.error ? '#0095f6' : '#7cc3f3')};
-  color: white;
   font-size: 1rem;
   font-weight: bold;
+  color: white;
 `;
 
 function Login() {

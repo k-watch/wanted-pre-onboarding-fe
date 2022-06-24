@@ -27,6 +27,7 @@ function useLogin() {
 
   function checkValidation(value, name) {
     let reg = null;
+
     if (name === 'email') {
       // 이메일 조건: @, . 포함
       reg = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
@@ -53,7 +54,7 @@ function useLogin() {
       e.preventDefault();
 
       for (const info of registerInfo) {
-        // 입력 정보와 등록된 회원정보와 같다면
+        // 입력정보와 등록된 회원정보가 같다면
         // 로컬스토리지 저장 후 메인 페이지 이동
         if (info.email === form.email && info.password === form.password) {
           try {

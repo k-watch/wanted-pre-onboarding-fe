@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import PreAssignmentGuide from './pages/PreAssignmentGuide';
 import { Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
@@ -15,7 +14,6 @@ function App() {
       <Routes>
         <Route element={<LoginPage />} path="/login" />
         <Route element={<MainPage />} path="/" />
-        <Route component={PreAssignmentGuide} path="/intro" />
       </Routes>
     </Wrap>
   );

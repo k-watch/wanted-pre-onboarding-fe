@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Login from '../components/Login';
+import { useNavigate } from 'react-router-dom';
+import Login from '../components/login/Login';
 
 const Wrap = styled.div`
   position: absolute;
@@ -16,11 +17,15 @@ const Wrap = styled.div`
 `;
 
 const LoginPage = () => {
-  return (
-    <Wrap>
-      <Login />
-    </Wrap>
-  );
+  const [user, setUser] = useState(localStorage.getItem('user'));
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // 로그인 상태라면 메인 페이지로
+    if (user) navigate('/');
+  }, []);
+
+  return <Wrap>{!user && <Login />}</Wrap>;
 };
 
 export default LoginPage;
