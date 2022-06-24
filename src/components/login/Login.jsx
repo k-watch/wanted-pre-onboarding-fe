@@ -63,6 +63,7 @@ function Login() {
           autoComplete="password"
           name="password"
           placeholder="비밀번호"
+          type="password"
           onChange={onChange}
           value={form.password}
           error={!error.password}
